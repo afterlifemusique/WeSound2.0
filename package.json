@@ -1,0 +1,48 @@
+{
+  "name": "wesound2.0",
+  "version": "1.0.0",
+  "description": "A music discovery and remix intelligence platform that visualizes how artists and tracks connect, grow, and evolve across the ecosystem.",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "backend",
+    "shared"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev --workspace=frontend\" \"npm run dev --workspace=backend\"",
+    "dev:frontend": "npm run dev --workspace=frontend",
+    "dev:backend": "npm run dev --workspace=backend",
+    "build": "npm run build --workspace=shared && npm run build --workspace=frontend && npm run build --workspace=backend",
+    "build:frontend": "npm run build --workspace=frontend",
+    "build:backend": "npm run build --workspace=backend",
+    "lint": "npm run lint --workspace=frontend && npm run lint --workspace=backend",
+    "typecheck": "npm run typecheck --workspace=frontend && npm run typecheck --workspace=backend",
+    "format": "prettier --write \"**/*.{ts,tsx,json}\" --ignore-path .gitignore",
+    "test": "echo \"No tests yet — add Jest or Vitest per workspace\" && exit 0",
+    "db:generate": "npm run db:generate --workspace=backend",
+    "db:migrate": "npm run db:migrate --workspace=backend",
+    "db:studio": "npm run db:studio --workspace=backend"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/afterlifemusique/WeSound2.0.git"
+  },
+  "bugs": {
+    "url": "https://github.com/afterlifemusique/WeSound2.0/issues"
+  },
+  "homepage": "https://github.com/afterlifemusique/WeSound2.0#readme",
+  "keywords": [
+    "music",
+    "discovery",
+    "remix",
+    "spotify",
+    "graph-visualization",
+    "monorepo"
+  ],
+  "author": "afterlifemusique",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "prettier": "^3.2.5"
+  }
+}
