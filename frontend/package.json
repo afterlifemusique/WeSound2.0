@@ -10,6 +10,8 @@
     "lint": "eslint src --ext .js,.jsx"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.97.0",
+    "@tanstack/react-query": "^5.90.21",
     "@wesound/shared": "*",
     "react": "^19.2.0",
     "react-dom": "^19.2.0"
